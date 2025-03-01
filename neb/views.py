@@ -12,9 +12,10 @@ def index(request):
     event = Event.objects.all()
     testi = testimonials.objects.all()
     gal = gallery.objects.all()
+    staf = staff.objects.all()
     return render(request, 'index.html',
                   {'categories': categories, 'menu_items': menu_items, 'specials': specials, 'event': event,
-                   'testi': testi, 'gal': gal})
+                   'testi': testi, 'gal': gal, 'staf':staf})
 
 
 def book_table(request):

@@ -11,3 +11,5 @@ admin.site.register(table)
 admin.site.register(testimonials)
 admin.site.register(gallery)
 admin.site.register(contact)
+admin.site.register(staff)
+

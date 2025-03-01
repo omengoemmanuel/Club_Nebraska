@@ -88,3 +88,17 @@ class contact(models.Model):
 
     def __str__(self):
         return self.name
+
+
+# Staffs
+class staff(models.Model):
+    name = models.CharField(max_length=100)
+    position = models.CharField(max_length=100)
+    X_link = models.URLField(null=True, blank=True)
+    facebook = models.URLField(null=True, blank=True)
+    instagram = models.URLField(null=True, blank=True)
+    linkedin = models.URLField(null=True, blank=True)
+    image = models.ImageField(upload_to='images/Staff', default='images/Staff/default.jpg')
+
+    def __str__(self):
+        return self.name

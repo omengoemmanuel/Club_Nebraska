@@ -6,3 +6,8 @@ from .models import *
 admin.site.register(MenuCategory)
 admin.site.register(MenuItem)
 admin.site.register(Special)
+admin.site.register(Event)
+admin.site.register(table)
+admin.site.register(testimonials)
+admin.site.register(gallery)
+admin.site.register(contact)

@@ -2,6 +2,12 @@ from django.shortcuts import render, redirect
 from .models import *
 from django.contrib import messages
 
+# for QR CODE
+import qrcode
+from django.http import HttpResponse
+from django.conf import settings
+import os
+
 
 # Create your views here.
 
@@ -48,3 +54,18 @@ def contacts(request):
         messages.success(request,"Message sent successfully")
         return redirect('index')
     return redirect('index')
+
+
+# Menu QR code function
+def menu_view(request):
+    categories = MenuCategory.objects.prefetch_related('items').all()
+    return render(request, 'qr code/menu.html', {'categories': categories})
+
+def generate_qr_code(request):
+    url = request.build_absolute_uri('menu_view')
+    qr = qrcode.make(url)
+    qr_path = os.path.join(settings.MEDIA_ROOT, 'qrcode.png')
+    qr.save(qr_path)
+
+    with open(qr_path, 'rb') as f:
+        return HttpResponse(f.read(),content_type='image/png')

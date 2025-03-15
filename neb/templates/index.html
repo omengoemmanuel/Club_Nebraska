@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Nebraska Lodge|Grill </title>
+    <title>Nebraska Lounge|Grill </title>
     <meta name="description" content="">
     <meta name="keywords" content="">
 
@@ -60,8 +60,8 @@
             </div>
             <div class="languages d-none d-md-flex align-items-center">
                 <ul>
-                   <!-- <li>En</li> -->
-                   <!-- <li><a href="#">De</a></li> -->
+                    <!-- <li>En</li> -->
+                    <!-- <li><a href="#">De</a></li> -->
                 </ul>
             </div>
         </div>
@@ -72,8 +72,8 @@
         <div class="container position-relative d-flex align-items-center justify-content-between">
             <a href="/" class="logo d-flex align-items-center me-auto me-xl-0">
                 <!-- Uncomment the line below if you also wish to use an image logo -->
-               <img src="{% static 'assets/img/remove.png' %}" alt="">
-                <h1 class="sitename">Club Nebraska</h1>
+                <img src="{% static 'assets/img/remove.png' %}" alt="">
+                <h1 class="sitename">Nebraska Lounge & Grill</h1>
             </a>
 
             <nav id="navmenu" class="navmenu">
@@ -101,12 +101,12 @@
     <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
 
-        <img src="{% static 'assets/img/hero-bg.jpg' %}" alt="" data-aos="fade-in">
+        <img src="{% static 'assets/img/background2.jpg' %}" alt="" data-aos="fade-in">
 
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 d-flex flex-column align-items-center align-items-lg-start">
-                    <h2 data-aos="fade-up" data-aos-delay="100">Welcome to <span>Club Nebraska</span></h2>
+                    <h2 data-aos="fade-up" data-aos-delay="100">Welcome to <span>Nebraska Lounge & Grill</span></h2>
                     <p data-aos="fade-up" data-aos-delay="200">Delivering great foods and drinks for more than 10
                         years!</p>
                     <div class="d-flex mt-4" data-aos="fade-up" data-aos-delay="300">
@@ -134,7 +134,7 @@
                 <div class="col-lg-6 order-2 order-lg-1 content">
                     <h3>About us</h3>
                     <p class="fst-italic">
-                        Welcome to Nebraska Club, a dynamic community dedicated to fostering connections, promoting
+                        Welcome to Nebraska Lounge & Grill, a dynamic community dedicated to fostering connections, promoting
                         growth, and creating impactful experiences. Our club brings together like-minded individuals who
                         share a passion for networking, personal development, and community engagement.
                     <ul>
@@ -146,7 +146,7 @@
                         </li>
                     </ul>
                     <p>
-                        At Nebraska Club, we believe in the power of collaboration and the strength of shared values.
+                        At Nebraska Lounge & Grill, we believe in the power of collaboration and the strength of shared values.
                         Whether you're looking to expand your professional network, participate in engaging events, or
                         contribute to meaningful initiatives, our club provides the perfect platform to connect and
                         grow.
@@ -581,7 +581,7 @@
                         <i class="bi bi-telephone flex-shrink-0"></i>
                         <div>
                             <h3>Call Us</h3>
-                            <p>+254 700000000</p>
+                            <p>0707444742</p>
                         </div>
                     </div><!-- End Info Item -->
 
@@ -654,7 +654,9 @@
                 </div>
                 <div class="social-links d-flex mt-4">
                     <a href=""><i class="bi bi-twitter-x"></i></a>
-                    <a target="_blank" href="https://www.facebook.com/profile.php?id=61550605654299&rdid=6m4FQCErQqDpgeiM&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1C6Q7vjuUK%2F"><i class="bi bi-facebook"></i></a>
+                    <a target="_blank"
+                       href="https://www.facebook.com/profile.php?id=61550605654299&rdid=6m4FQCErQqDpgeiM&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1C6Q7vjuUK%2F"><i
+                            class="bi bi-facebook"></i></a>
                     <a href=""><i class="bi bi-instagram"></i></a>
                     <a href=""><i class="bi bi-linkedin"></i></a>
                 </div>
@@ -683,15 +685,8 @@
             </div>
 
             <div class="col-lg-4 col-md-12 footer-newsletter">
-                <h4>Our Newsletter</h4>
-                <p>Subscribe to our newsletter and receive the latest news about our products and services!</p>
-                <form action="" method="post" class="php-email-form">
-                    <div class="newsletter-form"><input type="email" name="email"><input type="submit"
-                                                                                         value="Subscribe"></div>
-                    <div class="loading">Loading</div>
-                    <div class="error-message"></div>
-                    <div class="sent-message">Your subscription request has been sent. Thank you!</div>
-                </form>
+                <img src="{% static 'assets/img/footer_logo.jpg' %}" alt="" width="80%" height="60%" style="border-style: double;">
+
             </div>
 
         </div>
@@ -720,16 +715,16 @@
 <script src="{% static 'assets/js/main.js' %}"></script>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function () {
         // Disable right-click on all images
         document.querySelectorAll("img").forEach(img => {
-            img.addEventListener("contextmenu", function(event) {
+            img.addEventListener("contextmenu", function (event) {
                 event.preventDefault();
             });
         });
 
         // Disable right-click inside the lightbox
-        document.addEventListener("contextmenu", function(event) {
+        document.addEventListener("contextmenu", function (event) {
             if (event.target.tagName === "IMG") {
                 event.preventDefault();
             }

@@ -78,6 +78,11 @@
             -webkit-text-stroke: 1px white; /* White outline */
         }
 
+        i.fa-sign-out {
+            font-size: 22px; /* Adjust size */
+            color: transparent; /* Hide fill */
+            -webkit-text-stroke: 1px black; /* Black outline */
+        }
 
     </style>
 </head>
@@ -89,7 +94,7 @@
             <div class="sidebar_blog_1">
                 <div class="sidebar-header">
                     <div class="logo_section">
-                        <a href="/admin"><img class="logo_icon img-responsive"
+                        <a href="/admin_dashboard"><img class="logo_icon img-responsive"
                                               src="{% static 'images/logo/logo_icon.png' %}" alt="#"/></a>
                     </div>
                 </div>
@@ -113,7 +118,7 @@
                                 class="fa fa-dashboard yellow_color"></i> <span>Home</span></a>
                         <ul class="collapse list-unstyled" id="dashboard" style="background-color: #0ea432">
                             <li>
-                                <a href="/admin"> <span>Home</span></a>
+                                <a href="/admin_dashboard"> <span>Home</span></a>
                             </li>
 
                         </ul>
@@ -175,10 +180,9 @@
                                                 src="{% static 'images/layout_img/user_img.jpg' %}" alt="#"/><span
                                                 class="name_user">John David</span></a>
                                         <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="profile.html">My Profile</a>
-                                            <a class="dropdown-item" href="settings.html">Settings</a>
-                                            <a class="dropdown-item" href="help.html">Help</a>
-                                            <a class="dropdown-item" href="#"><span>Log Out</span> <i
+                                            <a class="dropdown-item" href="/profile">My Profile</a>
+                                            <a class="dropdown-item" href="/settings">Settings</a>
+                                            <a class="dropdown-item" href="/logout_user"><span>Log Out</span> <i
                                                     class="fa fa-sign-out"></i></a>
                                         </div>
                                     </li>

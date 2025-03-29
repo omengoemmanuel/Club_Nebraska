@@ -1,0 +1,178 @@
+{% extends 'dashboard1/layout.html' %}
+{% load static %}
+{% block body %}
+    <!-- dashboard inner -->
+    <div class="midde_cont">
+        <div class="container-fluid">
+            <div class="row column_title">
+                <div class="col-md-12">
+                    <div class="page_title">
+                        <h2>Settings</h2>
+                    </div>
+                </div>
+            </div>
+            <!-- row -->
+            <div class="row column4 graph">
+                <div class="col-md-5">
+                    <div class="white_shd full margin_bottom_30">
+                        <div class="full graph_head">
+                            <div class="heading1 margin_0">
+                                <h2>Message</h2>
+                            </div>
+                        </div>
+                        <div class="full progress_bar_inner">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="msg_section">
+                                        <div class="msg_list_main">
+                                            <ul class="msg_list">
+                                                <li>
+                                                <span><img src="{% static 'images/logoooo.jpg' %}"
+                                                           class="img-responsive"
+                                                           alt="#"></span>
+                                                    <span>
+                                                   <span class="name_user">John Smith</span>
+                                                   <span class="msg_user">Sed ut perspiciatis unde omnis.</span>
+                                                   <span class="time_ago">12 min ago</span>
+                                                   </span>
+                                                </li>
+                                                <li>
+                                                <span><img src="{% static 'images/logoooo.jpg' %}"
+                                                           class="img-responsive"
+                                                           alt="#"></span>
+                                                    <span>
+                                                   <span class="name_user">John Smith</span>
+                                                   <span class="msg_user">On the other hand, we denounce.</span>
+                                                   <span class="time_ago">12 min ago</span>
+                                                   </span>
+                                                </li>
+                                                <li>
+                                                <span><img src="{% static 'images/logoooo.jpg' %}"
+                                                           class="img-responsive"
+                                                           alt="#"></span>
+                                                    <span>
+                                                   <span class="name_user">John Smith</span>
+                                                   <span class="msg_user">Sed ut perspiciatis unde omnis.</span>
+                                                   <span class="time_ago">12 min ago</span>
+                                                   </span>
+                                                </li>
+                                                <li>
+                                                <span><img src="{% static 'images/logoooo.jpg' %}"
+                                                           class="img-responsive"
+                                                           alt="#"></span>
+                                                    <span>
+                                                   <span class="name_user">John Smith</span>
+                                                   <span class="msg_user">On the other hand, we denounce.</span>
+                                                   <span class="time_ago">12 min ago</span>
+                                                   </span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="white_shd full margin_bottom_30">
+                        <div class="full graph_head">
+                            <div class="heading1 margin_0">
+                                <h2>Calendar</h2>
+                            </div>
+                        </div>
+                        <div class="full progress_bar_inner">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="full">
+                                        <div class="ui calendar" id="example14"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- row -->
+                <div class="row column1 social_media_section">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="full socile_icons fb margin_bottom_30">
+                            <div class="social_icon">
+                                <i class="fa fa-facebook"></i>
+                            </div>
+                            <div class="social_cont">
+                                <ul>
+                                    <li>
+                                        <span><strong>35k</strong></span>
+                                        <span>Friends</span>
+                                    </li>
+                                    <li>
+                                        <span><strong>128</strong></span>
+                                        <span>Feeds</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="full socile_icons tw margin_bottom_30">
+                            <div class="social_icon">
+                                <i class="fa fa-twitter"></i>
+                            </div>
+                            <div class="social_cont">
+                                <ul>
+                                    <li>
+                                        <span><strong>584k</strong></span>
+                                        <span>Followers</span>
+                                    </li>
+                                    <li>
+                                        <span><strong>978</strong></span>
+                                        <span>Tweets</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="full socile_icons linked margin_bottom_30">
+                            <div class="social_icon">
+                                <i class="fa fa-linkedin"></i>
+                            </div>
+                            <div class="social_cont">
+                                <ul>
+                                    <li>
+                                        <span><strong>758+</strong></span>
+                                        <span>Contacts</span>
+                                    </li>
+                                    <li>
+                                        <span><strong>365</strong></span>
+                                        <span>Feeds</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="full socile_icons google_p margin_bottom_30">
+                            <div class="social_icon">
+                                <i class="fa fa-google-plus"></i>
+                            </div>
+                            <div class="social_cont">
+                                <ul>
+                                    <li>
+                                        <span><strong>450</strong></span>
+                                        <span>Followers</span>
+                                    </li>
+                                    <li>
+                                        <span><strong>57</strong></span>
+                                        <span>Circles</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end row -->
+
+            </div>
+{% endblock %}

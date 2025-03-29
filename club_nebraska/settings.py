@@ -118,6 +118,11 @@ USE_L10N = True
 USE_TZ = True
 
 
+LOGIN_URL = '/admin_login/'
+LOGIN_REDIRECT_URL = '/admin_board/'  # Where to redirect after login
+
+
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 

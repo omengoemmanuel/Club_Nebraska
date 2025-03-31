@@ -44,5 +44,7 @@ def layout(request):
 def profile(request):
     return render(request, 'dashboard1/profile.html')
 
+
+@login_required()
 def settings(request):
     return render(request, 'dashboard1/settings.html')

@@ -2,33 +2,38 @@
 {% load static %}
 {% block body %}
     <div class="midde_cont">
-    <div class="container-fluid">
-        <div class="row column_title">
-            <div class="col-md-12">
-                <div class="page_title">
-                    <h2>Staffs</h2>
-                </div>
-            </div>
-        </div>
-        <!-- row -->
-        <div class="row column1">
-            <div class="col-md-6 col-lg-4">
-                <div class="full white_shd margin_bottom_30">
-                    <div class="info_people">
-                        <div class="p_info_img">
-                            <img src="{% static 'images/layout_img/msg2.png' %}" alt="#"/>
-                        </div>
-                        <div class="user_info_cont">
-                            <h4>Smith</h4>
-                            <p>developer@gmail.com</p>
-                            <p class="p_status">Developer</p>
-                        </div>
+        <div class="container-fluid">
+            <div class="row column_title">
+                <div class="col-md-12">
+                    <div class="page_title">
+                        <h2>Staffs</h2>
                     </div>
                 </div>
             </div>
+            <!-- row -->
+            <div class="row column1">
+
+     
+                {% for st in staf %}
+                    <div class="col-md-6 col-lg-4">
+                        <div class="full white_shd margin_bottom_30">
+                            <div class="info_people">
+                                <div class="p_info_img">
+                                    <img src="/media/{{ st.image }}" alt="#" height="100" width="100">
+                                </div>
+                                <div class="user_info_cont">
+                                    <h4>{{ st.name }}</h4>
+                                    <p class="p_status">{{ st.position }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+
+
+            </div>
+            <!-- end row -->
         </div>
-        <!-- end row -->
-    </div>
     </div>
 
 {% endblock %}

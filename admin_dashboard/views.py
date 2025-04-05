@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from neb.models import *
 
 
 # Create your views here.
@@ -33,7 +34,10 @@ def logout_user(request):
 
 @login_required
 def admin_board(request):
-    return render(request, 'dashboard1/dashboard.html')
+    t_book = table.objects.count()
+    s_message = contact.objects.count()
+    testi = testimonials.objects.all()
+    return render(request, 'dashboard1/dashboard.html', {'t_book': t_book, 's_message': s_message, 'testi': testi})
 
 
 def layout(request):

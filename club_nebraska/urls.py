@@ -22,5 +22,5 @@ from django.conf import settings
 urlpatterns = [
     path('nebs/', admin.site.urls),
     path('', include('neb.urls')),
-    path('', include('admin_dashboard.urls', )),
+    path('admin', include('admin_dashboard.urls')),
 ]+static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

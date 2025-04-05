@@ -52,3 +52,9 @@ def profile(request):
 @login_required()
 def settings(request):
     return render(request, 'dashboard1/settings.html')
+
+
+@login_required()
+def staffs(request):
+    staf = staff.objects.all()
+    return render(request, 'dashboard1/staff.html', {'staf': staf})

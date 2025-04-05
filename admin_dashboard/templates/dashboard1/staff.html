@@ -6,7 +6,24 @@
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    {% if messages %}
+        <div id="message-card" class="alert alert-success position-fixed top-0 end-0 m-3 shadow-lg"
+             style="z-index: 1050;">
+            {% for message in messages %}
+                {{ message }}
+            {% endfor %}
+        </div>
 
+        <script>
+            // Hide the message card after 5 seconds
+            setTimeout(function () {
+                var messageCard = document.getElementById("message-card");
+                if (messageCard) {
+                    messageCard.style.display = "none";
+                }
+            }, 5000);
+        </script>
+    {% endif %}
     <div class="midde_cont">
         <div class="container-fluid">
             <div class="row column_title">
@@ -44,27 +61,27 @@
                             </div>
 
                             <div class="modal-body">
-                                <form method="POST" action="">
+                                <form method="POST" action="{% url 'add_staff' %}" enctype="multipart/form-data">
                                     {% csrf_token %}
                                     <div class="row g-3">
                                         <!-- Left Column -->
                                         <div class="col-md-6">
                                             <div class="mb-3">
                                                 <label for="fullName" class="form-label">Full Name</label>
-                                                <input type="text" class="form-control" id="fullName" name="full_name"
+                                                <input type="text" class="form-control" id="fullName" name="name"
                                                        required>
                                             </div>
                                             <div class="mb-3">
-                                                <label for="email" class="form-label">X-link</label>
-                                                <input type="email" class="form-control" id="email" name="x_link">
+                                                <label for="x_link" class="form-label">X-link</label>
+                                                <input type="text" class="form-control" id="x_link" name="X_link">
                                             </div>
                                             <div class="mb-3">
-                                                <label for="phone" class="form-label">Instagram link</label>
-                                                <input type="tel" class="form-control" id="phone" name="instagram_link">
+                                                <label for="instagram" class="form-label">Instagram link</label>
+                                                <input type="text" class="form-control" id="instagram" name="instagram">
                                             </div>
                                             <div class="mb-3">
-                                                <label for="department" class="form-label">Insert image</label>
-                                                <input type="file" class="form-control" id="department"
+                                                <label for="image" class="form-label">Insert image</label>
+                                                <input type="file" class="form-control" id="image"
                                                        name="image" required>
                                             </div>
                                         </div>
@@ -73,16 +90,17 @@
                                         <div class="col-md-6">
                                             <div class="mb-3">
                                                 <label for="position" class="form-label">Position</label>
-                                                <input type="text" class="form-control" id="position" name="position">
+                                                <input type="text" class="form-control" id="position" name="position"
+                                                       required>
                                             </div>
                                             <div class="mb-3">
-                                                <label for="startDate" class="form-label">Facebook link</label>
-                                                <input type="date" class="form-control" id="startDate"
-                                                       name="facebook_link">
+                                                <label for="facebook link" class="form-label">Facebook link</label>
+                                                <input type="text" class="form-control" id="facebook"
+                                                       name="facebook">
                                             </div>
                                             <div class="mb-3">
-                                                <label for="salary" class="form-label">LinkedIn</label>
-                                                <input type="number" class="form-control" id="salary" name="linkedin">
+                                                <label for="linkedin" class="form-label">LinkedIn</label>
+                                                <input type="text" class="form-control" id="linkedin" name="linkedin">
                                             </div>
                                         </div>
                                     </div>
@@ -99,25 +117,38 @@
                     </div>
                 </div>
 
-
-                {% for st in staf %}
-                    <div class="col-md-6 col-lg-4">
-                        <div class="full white_shd margin_bottom_30">
-                            <div class="info_people">
-                                <div class="p_info_img">
-                                    <img src="/media/{{ st.image }}" alt="#" height="100" width="100">
+                <div class="row column4 graph">
+                    <!-- Gallery section -->
+                    <div class="col-md-12">
+                        <div class="white_shd full margin_bottom_30">
+                            <div class="full graph_head">
+                                <div class="heading1 margin_0">
+                                    <h2>Nebraska Staffs</h2>
                                 </div>
-                                <div class="user_info_cont">
-                                    <h4>{{ st.name }}</h4>
-                                    <p class="p_status">{{ st.position }}</p>
+                            </div>
+                            <div class="full gallery_section_inner padding_infor_info">
+                                <div class="row">
+                                    {% for st in staf %}
+                                    <div class="col-sm-4 col-md-3 margin_bottom_30">
+                                        <div class="column">
+                                            <a data-fancybox="gallery"
+                                               href="/media/{{ st.image }}"><img
+                                                    class="img-responsive"
+                                                    src="/media/{{ st.image }}" height="200" width="200"
+                                                    alt="#"/></a>
+                                        </div>
+                                        <div class="heading_section">
+                                            <h4>{{ st.name }}</h4>
+                                            <h4>{{ st.position }}</h4>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
                                 </div>
                             </div>
                         </div>
                     </div>
-                {% endfor %}
-
+                </div>
             </div>
-            <!-- end row -->
         </div>
     </div>
 

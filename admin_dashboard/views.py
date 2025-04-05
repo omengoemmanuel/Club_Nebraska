@@ -58,3 +58,20 @@ def settings(request):
 def staffs(request):
     staf = staff.objects.all()
     return render(request, 'dashboard1/staff.html', {'staf': staf})
+
+# add staff
+def add_staff(request):
+    if request.method == 'POST':
+        name = request.POST['name']
+        position = request.POST['position']
+        X_link = request.POST.get('X_link')
+        facebook = request.POST.get('facebook')
+        instagram = request.POST.get('instagram')
+        linkedin = request.POST.get('linkedin')
+        image = request.FILES['image']
+
+        ad_staff = staff(name=name, position=position, X_link=X_link, facebook=facebook, instagram=instagram, linkedin=linkedin, image=image)
+        ad_staff.save()
+        messages.success(request, "Staff added successfully.")
+        return redirect('staffs')
+    return redirect('staffs')

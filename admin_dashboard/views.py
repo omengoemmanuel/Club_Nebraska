@@ -4,6 +4,10 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from neb.models import *
 
+from django.http import JsonResponse
+from django.shortcuts import get_object_or_404
+
+
 
 # Create your views here.
 
@@ -81,3 +85,21 @@ def add_staff(request):
 def table_booking(request):
     tab_book= table.objects.all()
     return render(request, 'dashboard1/tablebooking.html', {'tab_book': tab_book})
+
+# loading bookings inside a modal
+def get_table_booking(request, id):
+    if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+        booktable = get_object_or_404(table, id=id)
+        data = {
+            "name": table.name,
+            "email": table.email,
+            "phone": table.phone,
+            "date": table.date.strftime("%d/%m/%Y"),
+            "time": table.time.strftime("%H:%M"),
+            "no_of_people": table.no_of_people,
+            "message": table.message,
+            "status": table.status,
+            "approving_staff": table.approving_staff,
+        }
+        return JsonResponse(data)
+    return JsonResponse({'error': 'Invalid request'}, status=400)

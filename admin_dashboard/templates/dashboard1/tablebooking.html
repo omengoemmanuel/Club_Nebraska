@@ -61,7 +61,7 @@
                                     <span class="badge badge-success">{{ tab.status }}</span>
                                 </td>
                                 <td>
-                                    <!-- Trigger Button (Eye Icon) -->
+
                                     <span>
                                 <i class="bi bi-eye-fill text-primary cursor-pointer" data-bs-toggle="modal"
                                    data-bs-target="#viewModal"></i>
@@ -116,26 +116,45 @@
                         <span>Contact Details</span>
                         <hr>
                     </div>
-
                     <div class="container">
                         <div class="row">
                             <div class="col-md-6 p-4">
                                 <label for="name">Customer Name</label>
-                                <input type="text" class="form-control" id="name" placeholder="Enter Customer Name" readonly>
+                                <input type="text" class="form-control" id="name" placeholder="Enter Customer Name"
+                                       readonly>
                             </div>
                             <div class="col-md-6 p-4">
                                 <label for="email">Email</label>
                                 <input type="email" class="form-control" id="email" placeholder="Enter Email" readonly>
                             </div>
                         </div>
-
                     </div>
-
-
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6 p-4">
+                                <label for="phone">Phone Number</label>
+                                <input type="text" class="form-control" id="phone" placeholder="Phone Number"
+                                       readonly>
+                            </div>
+                            <div class="col-md-6 p-4">
+                                <label for="status">Status</label>
+                                <input type="text" class="form-control" id="status" placeholder="Status" readonly>
+                            </div>
+                            <label for="description">Description</label>
+                            <textarea name="description" id="description" cols="30" rows="5" class="form-control"
+                                      readonly></textarea>
+                        </div>
+                    </div>
                 </div>
-
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Dismiss</button>
+                    <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal"
+                            style="background-color: darkred">Cancel
+                    </button>
+                    <a href="">
+                        <button type="button" class="btn btn-secondary" style="background-color: green">Approve Booking
+                        </button>
+                    </a>
+
                 </div>
             </div>
         </div>

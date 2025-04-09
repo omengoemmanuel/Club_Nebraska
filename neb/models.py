@@ -59,6 +59,7 @@ class table(models.Model):
     time = models.TimeField()
     no_of_people = models.IntegerField()
     message = models.TextField()
+    status = models.CharField(max_length=100, default='Pending')
 
     def __str__(self):
         return self.name

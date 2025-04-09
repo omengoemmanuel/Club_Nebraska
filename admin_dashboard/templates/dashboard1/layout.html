@@ -38,6 +38,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 
+
     <style>
         .list-unstyled.components li {
             line-height: 1.0; /* Double line spacing */
@@ -102,9 +103,9 @@
                     <div class="icon_setting"></div>
                     <div class="user_profle_side">
                         <div class="user_img"><img class="img-responsive"
-                                                   src="{% static 'images/layout_img/user_img.jpg' %}" alt="#"/></div>
+                                                   src="{% static 'images/logoooo.jpg' %}" alt="#"/></div>
                         <div class="user_info">
-                            <h6 style="color: whitesmoke">John David</h6>
+                            <h6 style="color: whitesmoke">Admin-Nebraska</h6>
                             <p><span class="online_animation"></span> Online</p>
                         </div>
                     </div>
@@ -134,7 +135,7 @@
                             <li><a href="invoice.html"> <span>Food</span></a></li>
                         </ul>
                     </li>
-                    <li><a href="tables.html"><i class="fa fa-table purple_color2"></i> <span>Table bookings</span></a>
+                    <li><a href="{% url 'table_booking' %}"><i class="fa fa-table purple_color2"></i> <span>Table bookings</span></a>
                     </li>
                     <li>
                     <li><a href="tables.html"><i class="fa fa-table purple_color2"></i> <span>Special meals</span></a>
@@ -177,7 +178,7 @@
                                     <li>
                                         <a class="dropdown-toggle" data-toggle="dropdown"><img
                                                 class="img-responsive rounded-circle"
-                                                src="{% static 'images/layout_img/user_img.jpg' %}" alt="#"/><span
+                                                src="{% static 'images/logoooo.jpg' %}" alt="#"/><span
                                                 class="name_user">John David</span></a>
                                         <div class="dropdown-menu">
                                             <a class="dropdown-item" href="{% url 'profile' %}">My Profile</a>

@@ -1,0 +1,145 @@
+{% extends 'dashboard1/layout.html' %}
+{% load static %}
+{% block body %}
+    <style>
+        .line-with-text {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .line-with-text hr {
+            flex: 1;
+            border: 1px solid;
+            border-top: 1px solid #ccc;
+        }
+
+        .line-with-text span {
+            padding: 0 10px;
+            color: #666;
+            font-weight: 500;
+        }
+
+    </style>
+    <div class="midde_cont">
+        <div class="container-fluid">
+            <div class="row column_title">
+                <div class="col-md-12">
+                    <div class="page_title">
+                        <h2>Table booking</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <table class="table align-middle mb-0 bg-white">
+                        <thead class="bg-light">
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>No. of People</th>
+                            <th>Description</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for tab in tab_book %}
+                            <tr>
+                                <td>{{ tab.name }}</td>
+                                <td>{{ tab.email }}</td>
+                                <td>{{ tab.phone }}</td>
+                                <td>{{ tab.date }}</td>
+                                <td>{{ tab.time }}</td>
+                                <td>{{ tab.no_of_people }}</td>
+                                <td>{{ tab.message }}</td>
+                                <td>
+                                    <span class="badge badge-success">{{ tab.status }}</span>
+                                </td>
+                                <td>
+                                    <!-- Trigger Button (Eye Icon) -->
+                                    <span>
+                                <i class="bi bi-eye-fill text-primary cursor-pointer" data-bs-toggle="modal"
+                                   data-bs-target="#viewModal"></i>
+                                </span>
+
+                                    <span class=""><i class="bi bi-three-dots"></i></span>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Large Modal -->
+    <div class="modal fade" id="viewModal" tabindex="-1" aria-labelledby="viewModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="viewModalLabel">Appointment Overview</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6 p-4">
+                                <h6 class="text-lg font-semibold">Booking Schedule</h6>
+                                <h4>Date</h4>
+                            </div>
+                            <div class="col-md-6 p-4">
+                                <h6 class="text-lg font-semibold">Status:</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6 p-4">
+                                <h6>Number of people</h6>
+                                <h4>Number</h4>
+                            </div>
+                            <div class="col-md-6 p-4">
+                                <h6 class="text-lg font-semibold">Approving Officer</h6>
+                                <h4>Name</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="line-with-text">
+                        <hr>
+                        <span>Contact Details</span>
+                        <hr>
+                    </div>
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6 p-4">
+                                <label for="name">Customer Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="Enter Customer Name" readonly>
+                            </div>
+                            <div class="col-md-6 p-4">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="Enter Email" readonly>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Dismiss</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

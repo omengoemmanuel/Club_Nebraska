@@ -75,3 +75,9 @@ def add_staff(request):
         messages.success(request, "Staff added successfully.")
         return redirect('staffs')
     return redirect('staffs')
+
+# table booking
+@login_required()
+def table_booking(request):
+    tab_book= table.objects.all()
+    return render(request, 'dashboard1/tablebooking.html', {'tab_book': tab_book})
